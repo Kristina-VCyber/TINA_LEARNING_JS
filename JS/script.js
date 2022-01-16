@@ -19,9 +19,6 @@ if (1) {
 } else {
   console.log("Error");
 
-
-
-}
 const num = 2;
 if (num < 49) {
   console.log("Error");
@@ -46,5 +43,5 @@ switch (numForSwitchCheck) {
   default:
     console.log("Not this time");
     break;
-}
+}}
 
