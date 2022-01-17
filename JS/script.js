@@ -1,67 +1,34 @@
 "use strict";
-// const numberOfFilms = +prompt ('Сколько фильмов Вы уже посмотрели?', '');
-// const personalMovieDB = {
-//   count: numberOfFilms,
-//   movies: {},
-//   actors: {},
-//   genres: [],
-//   private: false
-// };
-// const seenMovieQuestion = prompt ("Один из последних просмотренных фильмов?","");
-// const movieRate = prompt ("На сколько оцените его?","");
-// const seenMovieQuestionSecond = prompt ("Один из последних просмотренных фильмов?","");
-// const movieRateSecond = prompt ("На сколько оцените его?","");
-// personalMovieDB.movies[seenMovieQuestion] = movieRate;
-// personalMovieDB.movies[seenMovieQuestionSecond] = movieRateSecond;
-// console.log(personalMovieDB);
-// if (1) {
-//   console.log("OK!");
-// } else {
-//   console.log("Error");
-//
-// const num = 2;
-// if (num < 49) {
-//   console.log("Error");
-// } else if (num > 100) {
-//   console.log("Too much")
-// } else {
-//   console.log("OK!");
-// }
-// (num === 50)? console.log("OK!") : console.log("Error");
-//
-// const numForSwitchCheck = 52;
-// switch (numForSwitchCheck) {
-//   case 49:
-//     console.log("Wrong");
-//     break;
-//   case 100:
-//     console.log("Wrong");
-//     break;
-//   case 50:
-//     console.log("Yes");
-//     break;
-//   default:
-//     console.log("Not this time");
-//     break;
-// }}
+const numberOfFilms = +prompt('Сколько фильмов Вы уже посмотрели?', '');
+const personalMovieDB = {
+  count: numberOfFilms,
+  movies: {},
+  actors: {},
+  genres: [],
+  private: false
+};
 
-// unit14.Loops
-let num = 50;
-// while (num < 55) {
-//   console.log(num);
-//   num++;
-// }
-
-// do {
-//   console.log(num);
-//   num++;
-// }
-// while (num < 40);
-
-for (let i=1; i <10; i++){
-  if (i===6){
-    continue;
+for (let i = 0; i < 2; i++) {
+  const seenMovieQuestion = prompt("Один из последних просмотренных фильмов?", "");
+  const movieRate = prompt("На сколько оцените его?", "");
+  if (seenMovieQuestion !== null && movieRate !== null && seenMovieQuestion !== "" && movieRate !== "" && seenMovieQuestion.length < 50) {
+    personalMovieDB.movies[seenMovieQuestion] = movieRate;
+    console.log("done");
+  } else {
+    console.log("error");
+    i--;
   }
-  console.log(i);
-
 }
+if (personalMovieDB.count < 10) {
+  alert("Просмотрено довольно много фильмов");
+} else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
+  alert("Вы классический зритель");
+} else if (personalMovieDB.count >= 30) {
+  alert("Вы киноман");
+} else {
+  alert("Произошла ошибка");
+}
+
+
+// console.log(personalMovieDB);
+
